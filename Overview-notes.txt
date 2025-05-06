@@ -1,0 +1,25 @@
+environment startup
+    Powershell
+    cd  C:\Users\deang\Documents\Projects\ai_agent_proto\langchain-course\langchain-academy
+    lc-academy-env\scripts\activate
+
+Jupyter notebook startup
+$ jupyter notebook
+
+How to enable env variables, api keys in jupyter notebook
+
+from dotenv import load_dotenv
+import os
+from pathlib import Path
+
+# Path to the .env file in the project root
+dotenv_path = Path().resolve().parent / '.env'
+
+# Load the .env file
+load_dotenv(dotenv_path=dotenv_path)
+
+# Access the API key
+api_key = os.getenv("OPENAI_API_KEY")
+print(f"API Key: {api_key}")
+
+
